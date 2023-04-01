@@ -14,9 +14,9 @@ type News = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<News>
+  res: NextApiResponse<News[]>
 ) {
-  res.status(200).json({ 
+  res.status(200).json([{ 
     title: "CNS e ENSP dialogam aprofundamento da parceria entre as entidades",
     description: `
       image1 
@@ -39,5 +39,44 @@ export default function handler(
       name: "image2",
       link: "http://conselho.saude.gov.br/images/WhatsApp_Image_2023-03-30_at_15.18.15.jpeg"
     }]
-  })
+  }, {
+    title: "17ª CNS: Juventude rural, migrantes e negros estão entre as populações que organizam conferências livres de saúde",
+    description: `
+      image1 
+      As conferências livres são etapas preparatórias para a 17ª Conferência Nacional de Saúde (CNS). Elas podem ser
+      realizadas por organizações e movimentos sociais que queiram discutir questões específicas, no âmbito da saúde
+      pública, para serem apresentadas na etapa nacional da 17ª CNS, que será realizada em Brasília, de 2 a 5 de julho.
+
+      Desde novembro, quando se iniciou o período de realização das etapas preparatórias para a 17ª CNS, já aconteceram
+      diversas conferências em diferentes regiões do Brasil, seja em formato presencial ou online, entre elas sobre Saúde
+      Pública Veterinária, Juventudes e dos Povos Tradicionais de Matriz Africana.
+
+      A próxima conferência livre nacional de saúde está agendada para 18/04, com o tema Acesso a Medicamentos em
+      Defesa da Vida, e no dia 25/04 será a vez da Juventude do Campo, da Floresta e das Águas organizarem a sua.
+
+      A partir de maio, o calendário inclui as conferências livres nacionais sobre: Demências; Saúde da População Negra;
+      Educação Popular em Saúde; Populações Migrantes; Maconha Medicinal; Saúde dos Trabalhadores e das
+      Trabalhadoras; Saúde Bucal; Saúde das Mulheres, entre outras.
+
+      As conferências livres possibilitam a ampliação da participação social para os debates e para a formulação de propostas
+      em torno do tema da 17ª CNS, podendo ser realizadas também em âmbito municipal, intermunicipal, regional,
+      macrorregional e estadual.
+
+      Umas das grandes inovações trazidas para esta edição da Conferência Nacional de Saúde é a possibilidade que
+      Conferências Livres de Saúde elenquem propostas para a etapa nacional. É importante destacar que elas não
+      competem ou substituem a realização das conferências das etapas municipal e estadual.
+
+      (https://docs.google.com/spreadsheets/d/1fQCHZbqpgL_hBGDnRfv8kDyhwYB38g7k/edit#gid=822759385)[Acesse o calendário de Conferências Livres Nacionais de Saúde]
+      (http://www.conselho.saude.gov.br/ultimas-noticias-cns/2901-conferencias-livres-de-saude-confira-o-passo-a-passo-para-realizacao-e-integracao-da-atividade-na-etapa-nacional)[Confira o passo a passo para realização e integração da atividade na etapa nacional]
+      Ascom CNS
+    `,
+    datetime: new Date(Date.UTC(2023, 3, 30, 19, 26)),
+    images: [{
+      name: "icon",
+      link: "http://conselho.saude.gov.br/images/52667315094_cb5555913c_c.jpg"
+    }, {
+      name: "image1",
+      link: "http://conselho.saude.gov.br/images/52667315094_cb5555913c_c.jpg"
+    }]
+  }])
 }
